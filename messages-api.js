@@ -41,7 +41,7 @@ async function isAllowedMiddleware(req) {
   const isSixthRequest = lastFive
     .map(prevMessage => prevMessage === req.body.message)
     .reduce((total, current) => total && current, true)
-  // True to allow DB write, False if this is the 6th repeated request
+  // true to allow DB write, false if this is the 6th repeated request
   return !isSixthRequest
 }
 
